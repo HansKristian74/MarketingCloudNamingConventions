@@ -10,7 +10,7 @@ This guide establishes standardized naming conventions for all assets and object
 
 All naming conventions in Marketing Cloud should follow **PascalCase** (also known as UpperCamelCase), where:
 - The first letter of each word is capitalized
-- No spaces or special characters are used
+- No spaces or special characters are used (except where acronyms are present)
 - Words are concatenated together
 
 ### Pascal Case Examples
@@ -19,6 +19,8 @@ All naming conventions in Marketing Cloud should follow **PascalCase** (also kno
 - `EmailCampaignQ4`
 - `LeadScoringJourney`
 - `ProductLaunchNotification`
+- `API_DataSync` (acronym exception)
+- `SMS_CampaignScheduler` (acronym exception)
 
 ❌ **Incorrect:**
 - `customer_segmentation` (snake_case)
@@ -42,11 +44,13 @@ Email templates and sends should use descriptive PascalCase names that indicate 
 - `PromotionalOfferPrimeMembers`
 - `TransactionalOrderConfirmation`
 - `ReEngagementCampaignInactiveUsers`
+- `API_IntegrationNotification` (with acronym)
 
 ### Best Practices
 - Include the email type (Welcome, Newsletter, Promotional, Transactional, etc.)
 - Specify the audience segment when relevant
 - Add version numbers or dates for A/B testing: `PromotionalOfferPrimeMembers_V2`
+- Use underscores to separate acronyms from the rest of the name: `API_EmailNotification`, `SMS_Promotion`
 
 ---
 
@@ -64,12 +68,14 @@ Lists and audience segments should clearly identify their purpose and usage.
 - `FreemiumUsersConvertible`
 - `VIPMembersLoyalty`
 - `NewSignUpsLastThirtyDays`
+- `API_ConnectedUsers` (with acronym)
 
 ### Best Practices
 - Lead with the segment type
 - Include key demographic or behavioral criteria
 - Add status indicators when necessary (Active, Inactive, Pending)
 - Avoid using generic names like `List1` or `Audience2`
+- Use underscores when acronyms are at the beginning: `API_Subscribers`, `CRM_Contacts`
 
 ---
 
@@ -87,12 +93,14 @@ Marketing automation journeys and workflows should have clear, action-oriented n
 - `ReActivationCampaignLapseMembers`
 - `UpsellJourneyMidTierCustomers`
 - `EventFollowUpAttendees`
+- `API_DataSyncAutomation` (with acronym)
 
 ### Best Practices
 - Use verbs that describe the journey purpose
 - Include the trigger event or content type
 - Specify the target audience
 - Keep names concise but descriptive
+- Use underscores to separate leading acronyms: `API_SyncWorkflow`, `CRM_UpdateJourney`
 
 ---
 
@@ -111,12 +119,14 @@ Data Extensions store custom data and should be named to reflect their content a
 - `WebsiteVisitorBehavior`
 - `InventoryLevelsDaily`
 - `CustomerPreferencesData`
+- `API_IntegrationLog` (with acronym)
 
 ### Best Practices
 - Clearly indicate what data the extension contains
 - Use plural nouns when appropriate (e.g., `CustomerPreferences`)
 - Include frequency indicators if data refreshes regularly (Daily, Weekly, Monthly)
 - Avoid abbreviations unless universally understood
+- Use underscores for acronyms: `CRM_SyncData`, `API_ResponseLog`
 
 ---
 
@@ -135,12 +145,14 @@ Individual fields within Data Extensions and other objects should follow PascalC
 - `PreferredLanguage`
 - `OptInStatus`
 - `AccountCreationDate`
+- `API_KeyLastUpdated` (with acronym)
 
 ### Best Practices
 - Use descriptive names that indicate the field's content
 - Avoid single-letter field names
 - Use compound names to indicate related fields: `FirstName`, `LastName`
 - Include units when relevant: `OrderValueUSD`, `HeightCentimeters`
+- Use underscores when acronyms are part of the field name: `SMS_OptInDate`, `API_SyncTimestamp`
 
 ---
 
@@ -158,12 +170,14 @@ High-level campaign names should be clear and aligned with business objectives.
 - `BackToSchoolSaleEvent`
 - `HolidayGiftingSequence`
 - `AnnualClearanceSale`
+- `API_PartnerIntegrationCampaign` (with acronym)
 
 ### Best Practices
 - Include the year for time-sensitive campaigns
 - Use season or event identifiers
 - Make names searchable and memorable
 - Avoid special characters or numbers at the beginning
+- Use underscores for acronyms: `API_MarketingCampaign`, `SMS_PromoEvent`
 
 ---
 
@@ -179,12 +193,14 @@ Folders used to organize campaigns, emails, and content should also follow Pasca
 - `ReportsAndAnalytics/`
 - `TemplateLibrary/`
 - `DataExtensions/`
+- `API_Integrations/` (with acronym)
 
 ### Best Practices
 - Create logical folder hierarchies
 - Use consistent naming across folder levels
 - Organize by function, audience, or time period
 - Include metadata in folder descriptions
+- Use underscores for acronym-based folders: `API_Logs/`, `SMS_Templates/`, `CRM_Syncs/`
 
 ---
 
@@ -202,12 +218,14 @@ Reusable email templates should be named to indicate their purpose and intended 
 - `TransactionalReceiptFormat`
 - `SurveyInvitationTemplate`
 - `EventInvitationLuxury`
+- `API_ResponseEmailTemplate` (with acronym)
 
 ### Best Practices
 - Clearly indicate it's a template
 - Specify the template type (Email, SMS, Push, etc.)
 - Include the intended use case
 - Version control templates: `EmailTemplateWelcomeBase_V2`
+- Use underscores for acronyms: `API_NotificationTemplate`, `SMS_RemainderTemplate`
 
 ---
 
@@ -225,12 +243,14 @@ Reports and analytics should have descriptive names following PascalCase.
 - `DeliveryRateByISPDaily`
 - `CustomerLifecycleValueReport`
 - `SenderReputationScoreTracking`
+- `API_SyncPerformanceDaily` (with acronym)
 
 ### Best Practices
 - Include the report frequency
 - Indicate the metrics or data being analyzed
 - Use clear, business-friendly language
 - Add date ranges in report titles when applicable
+- Use underscores for acronyms: `API_ErrorLog`, `SMS_DeliveryReport`
 
 ---
 
@@ -247,12 +267,14 @@ Preference centers and subscription management tools should be clearly named.
 - `NotificationSettingsPortal`
 - `SubscriptionManagementCenter_V2`
 - `ChannelPreferenceSelector`
+- `API_PreferenceCenter` (with acronym)
 
 ### Best Practices
 - Clearly indicate the purpose
 - Include version numbers for updates
 - Make names user-friendly
 - Consider the customer experience
+- Use underscores for acronyms: `API_SettingsCenter`, `SMS_PreferenceHub`
 
 ---
 
@@ -269,20 +291,30 @@ Preference centers and subscription management tools should be clearly named.
 | **No Abbreviations** | Spell out words unless they're universally known (API, SMS, etc.) |
 | **Avoid Numbers** | Use descriptive text instead of version numbers when possible |
 | **Version Control** | Use `_V1`, `_V2` suffixes for iterations |
+| **Acronym Handling** | Use underscores to separate acronyms: `API_DataSync`, `SMS_Campaign` |
 
 ---
 
 ## Special Characters & Symbols
 
 ### Allowed
-- **Underscores** for version control only: `CampaignName_V2`
+- **Underscores** for version control: `CampaignName_V2`
+- **Underscores** when an acronym is part of the name: `API_Integration`, `CRM_Sync`, `SMS_Campaign`
 - **Hyphens** when necessary (though underscores are preferred): `Campaign-Name`
 
 ### Not Allowed
 - Spaces
 - Special characters: `! @ # $ % ^ & * ( ) = + [ ] { } ; : ' " , . < > / ? \`
 - Accented characters: `é, ñ, ü` (use English equivalents)
-- Leading or trailing underscores: `_CampaignName` or `CampaignName_`
+- Leading or trailing underscores (except for acronyms): `_CampaignName` or `CampaignName_`
+- Multiple consecutive underscores: `Campaign__Name`
+
+### Acronym Guidelines
+When an acronym appears at the beginning or middle of a name:
+- ✅ **Use underscores to separate**: `API_DataSync`, `CRM_Integration`, `SMS_Campaign`
+- ❌ **Do NOT mix case within acronyms**: `Api_DataSync`, `Crm_Integration`
+- ✅ **Keep the acronym in ALL CAPS**: `API`, `CRM`, `SMS`, `CDN`, `CDO`, `SFMC`
+- Examples of acronyms: API, CRM, SMS, CDN, CDO, SFMC, ESP, ISP, KPI, ROI, CSV, JSON
 
 ---
 
@@ -312,18 +344,22 @@ Preference centers and subscription management tools should be clearly named.
 - `CartAbandonment[RecoveryAttempt]`
 - `OrderConfirmationTransactional`
 - `LoyaltyRewardsMembersExclusive`
+- `API_InventorySyncDaily`
 
 ### SaaS Company
 - `FreeTrialOnboardingSequence`
 - `ProductUpdateAnnouncement`
 - `UpgradeJourneyFreemiumUsers`
 - `ChurnPreventionCampaign`
+- `API_UserDataSync`
 
 ### Enterprise B2B
 - `AccountBasedMarketingCampaign[AccountName]`
 - `IndustrySpecificWhitepaperPromotion`
 - `ExecutiveIntelligenceBriefing`
 - `PartnerEcosystemEngagement`
+- `CRM_AccountSyncDaily`
+- `API_PartnerIntegration`
 
 ---
 
@@ -332,4 +368,4 @@ Preference centers and subscription management tools should be clearly named.
 For questions about naming conventions or to propose updates to this guide, please contact your Marketing Cloud Administrator or create an issue in this repository.
 
 **Last Updated:** October 2026
-**Version:** 1.0
+**Version:** 1.1
